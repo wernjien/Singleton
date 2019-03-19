@@ -5,9 +5,14 @@ PHP Singleton trait.
 ```php
 class Foo
 {
-    use SingletonTrait;
+    use Singleton;
 
-    public static function __callStatic($name, $arguments)
+    public function __construct()
+    {
+        // ...
+    }
+
+    public static function __callStatic($method, $arguments)
     {
         $instance = static::getInstance();
 
